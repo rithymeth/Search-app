@@ -33,7 +33,7 @@
         <p><strong>3 character Country Code:</strong> {{ selectedCountry.cca3 }}</p>
         <p><strong>Native Country Name:</strong> {{ selectedCountry.name.nativeName.ara }}</p>
         <p><strong>Alternative Country Name:</strong> {{ selectedCountry.altSpellings.join(', ') }}</p>
-        <p><strong>Country Calling Codes:</strong> {{ selectedCountry.idd }}</p>
+        <p><strong>Country Calling Codes:</strong> {{ selectedCountry.idd.root + selectedCountry.idd.suffixes }}</p>
       </div>
     </div>
   </b-modal>
