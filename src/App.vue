@@ -15,7 +15,7 @@
         <tr v-for="country in displayedCountries" :key="country.cca2">
           <td><img :src="country.flags.png" alt="Flag" class="flag-image" /></td>
           <td @click="showModal(country)">{{ country.name.official }}</td>
-          <td>{{ country.name.nativeName.ara }}</td>
+          <td>{{ country.name.nativeName.ara ? country.name.nativeName.ara.official : '...' }}</td>
         </tr>
       </tbody>
     </table>
@@ -31,7 +31,7 @@
         <p><strong>Country Name:</strong> {{ selectedCountry.name.official }}</p>
         <p><strong>2 character Country Code:</strong> {{ selectedCountry.cca2 }}</p>
         <p><strong>3 character Country Code:</strong> {{ selectedCountry.cca3 }}</p>
-        <p><strong>Native Country Name:</strong> {{ selectedCountry.name.nativeName.ara }}</p>
+         <p><strong>Native Country Name:</strong> {{ selectedCountry.name.nativeName.ara ? selectedCountry.name.nativeName.ara.official : '...' }}</p>
         <p><strong>Alternative Country Name:</strong> {{ selectedCountry.altSpellings.join(', ') }}</p>
         <p><strong>Country Calling Codes:</strong> {{ selectedCountry.idd.root + selectedCountry.idd.suffixes }}</p>
       </div>
